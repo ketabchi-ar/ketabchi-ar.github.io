@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Palette Smart Quiz & Fast Checkout | کوئیزساز هوشمند و تسویه‌حساب سریع ووکامرس</title>
+  <meta name="description" content="افزونه کوئیزساز هوشمند، پیشنهاددهنده محصول ووکامرس، احراز هویت با OTP و تسویه‌حساب تک‌صفحه‌ای سریع SPA">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0284c7;
+      --primary-dark: #0369a1;
+      --secondary: #53bec2;
+      --navy: #0f172a;
+      --slate: #334155;
+      --bg: #0b1120;
+      --surface: #1e293b;
+      --surface-light: #334155;
+      --accent: #10b981;
+      --glow: rgba(2, 132, 199, 0.25);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: #f8fafc;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    
+    /* Header */
+    header {
+      padding: 24px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      position: sticky;
+      top: 0;
+      background: rgba(11, 17, 32, 0.85);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+    }
+    .logo {
+      font-size: 20px;
+      font-weight: 900;
+      background: linear-gradient(135deg, #38bdf8, #53bec2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .nav-links { display: flex; gap: 20px; align-items: center; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 22px;
+      border-radius: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      font-size: 14.5px;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #0284c7, #0369a1);
+      color: #fff;
+      box-shadow: 0 4px 20px var(--glow);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(2, 132, 199, 0.4);
+    }
+    .btn-outline {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #f8fafc;
+    }
+    .btn-outline:hover { background: rgba(255, 255, 255, 0.05); }
+
+    /* Hero Section */
+    .hero {
+      padding: 90px 0 60px;
+      text-align: center;
+      position: relative;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(2, 132, 199, 0.15);
+      border: 1px solid rgba(2, 132, 199, 0.35);
+      color: #38bdf8;
+      padding: 6px 16px;
+      border-radius: 9999px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-size: 46px;
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 20px;
+      background: linear-gradient(180deg, #ffffff, #94a3b8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      font-size: 19px;
+      color: #94a3b8;
+      max-width: 780px;
+      margin: 0 auto 36px;
+    }
+    .hero-cta { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+
+    /* Features Grid */
+    .features { padding: 80px 0; }
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .section-title h2 { font-size: 32px; font-weight: 900; margin-bottom: 12px; }
+    .section-title p { color: #94a3b8; font-size: 16px; }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 20px;
+      padding: 32px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(2, 132, 199, 0.4);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    }
+    .card-icon {
+      font-size: 36px;
+      margin-bottom: 20px;
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 12px;
+      border-radius: 14px;
+    }
+    .card h3 { font-size: 20px; font-weight: 800; margin-bottom: 12px; color: #fff; }
+    .card p { color: #94a3b8; font-size: 15px; }
+
+    /* Interactive Preview Box */
+    .preview-box {
+      margin-top: 50px;
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 24px;
+      padding: 40px;
+      text-align: center;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 40px 0;
+      text-align: center;
+      color: #64748b;
+      font-size: 14px;
+    }
+    footer a { color: #38bdf8; text-decoration: none; font-weight: 700; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+      <div class="logo">
+        <span>🎯</span>
+        <span>Palette Smart Quiz</span>
+      </div>
+      <div class="nav-links">
+        <a href="https://github.com/ketabchi-ar/palette-smart-quiz" class="btn btn-outline" target="_blank">گیت‌هاب پروژه</a>
+        <a href="https://github.com/ketabchi-ar/palette-smart-quiz/releases" class="btn btn-primary" target="_blank">دانلود آخرین نسخه</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero-badge">⚡ نسخه v3.14.2 منتشر شد — کاملاً پایدار و سازگار با وردپرس ۷.۱</div>
+      <h1>کوئیز هوشمند، پیشنهاد محصول<br>و تسویه‌حساب سریع در ووکامرس</h1>
+      <p>با ایجاد سفر خرید تعاملی و چندمرحله‌ای، مشتریان را به بهترین محصول متناسب با سلیقه‌شان هدایت کنید و سفارش را بدون خروج از صفحه و بدون ریزش ثبت نمایید.</p>
+      
+      <div class="hero-cta">
+        <a href="https://github.com/ketabchi-ar/palette-smart-quiz/releases" class="btn btn-primary btn-large">📦 دریافت فایل افزونه (ZIP)</a>
+        <a href="https://github.com/ketabchi-ar/palette-smart-quiz" class="btn btn-outline btn-large">⭐ ستاره در گیت‌هاب</a>
+      </div>
+    </section>
+
+    <section class="features container">
+      <div class="section-title">
+        <h2>امکانات فوق‌العاده برای فروشگاه‌های ووکامرس</h2>
+        <p>هر آنچه برای رشد فروش، تعامل عمیق با خریداران و افزایش نرخ تبدیل نیاز دارید</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-icon">🧙‍♂️</div>
+          <h3>کوئیزساز بصری ۳ مرحله‌ای</h3>
+          <p>تعریف محصولات هدف، ساخت سؤالات با کارت‌های منظم و منطق شرطی پیشرفته به همراه شبیه‌ساز زنده در پیشخوان.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">⚡</div>
+          <h3>تسویه‌حساب تک‌صفحه‌ای (SPA)</h3>
+          <p>ثبت سفارش برق‌آسا مبتنی بر React بدون رفرش برگه، با دیتابیس کامل استان‌ها و شهرهای ایران و درگاه‌های پرداخت.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">📱</div>
+          <h3>احراز هویت پیامکی بدون پسورد</h3>
+          <p>ورود و ثبت‌نام خودکار خریدار فقط با وارد کردن شماره موبایل و کد پیامکی یکبار مصرف (OTP زیر ۵ ثانیه).</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🎁</div>
+          <h3>کش‌بک و بازی‌سازی خرید مجدد</h3>
+          <p>تخصیص خودکار اعتبار هدیه و پاداش نقدی در خریدهای آتی جهت وفادارسازی مشتریان و افزایش دفعات خرید.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🔔</div>
+          <h3>وب‌هوک تلگرام، بله، ایتا و اتوماسیون</h3>
+          <p>ارسال آنی جزئیات سفارشات ثبت‌شده به ربات یا کانال تلگرام، بله، ایتا و سیستم‌های Zapier و n8n.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">📊</div>
+          <h3>رهگیری سبدهای رهاشده و تست A/B</h3>
+          <p>مانیتورینگ ریزش مراحل کوئیز، تحلیل رفتار خریداران و امکان بازاریابی مجدد پیامکی (Remarketing).</p>
+        </div>
+      </div>
+
+      <div class="preview-box">
+        <h3 style="font-size: 24px; font-weight: 800; margin-bottom: 14px;">آماده افزایش فروش فروشگاه اینترنتی خود هستید؟</h3>
+        <p style="color: #94a3b8; max-width: 600px; margin: 0 auto 24px;">افزونه را روی فروشگاه ووکامرسی خود فعال کنید و در کمتر از ۵ دقیقه اولین کوئیز هوشمند فروشگاهی را بسازید.</p>
+        <a href="https://github.com/ketabchi-ar/palette-smart-quiz/releases" class="btn btn-primary">دانلود نسخه v3.14.2</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>توسعه داده شده با ❤️ توسط <a href="https://palette.agency" target="_blank">آژانس دیجیتال پالت</a> | گواهینامه GPL-2.0</p>
+    </div>
+  </footer>
+
+</body>
+</html>
