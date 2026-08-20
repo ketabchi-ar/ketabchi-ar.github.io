@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Palette Panel | پالت پنل - افزونه جامع پنل کاربری و مدیریت ووکامرس</title>
+  <meta name="description" content="پلتفرم جامع، ماژولار و فوق‌پیشرفته برای وردپرس و ووکامرس با دیزاین‌سیستم اختصاصی Serene Pro، احراز هویت پیامکی/بیومتریک، کارت‌به‌کارت هوشمند و گیمیفیکیشن" />
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Vazirmatn Font CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <!-- Google Material Symbols -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Vazirmatn', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              500: '#22c55e',
+              600: '#16a34a',
+              700: '#15803d',
+              900: '#14532d',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Vazirmatn', sans-serif; }
+    .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
+    .glass-light { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(8px); border: 1px solid rgba(255, 255, 255, 0.05); }
+    .text-gradient { background: linear-gradient(135deg, #4ade80, #38bdf8, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  </style>
+</head>
+<body class="bg-[#0b0f19] text-slate-100 antialiased selection:bg-brand-500 selection:text-white min-h-screen flex flex-col justify-between">
+
+  <!-- Navbar -->
+  <header class="sticky top-0 z-50 glass border-b border-slate-800/80 px-4 lg:px-8 py-3.5">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <a href="../" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-400 flex items-center justify-center shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition">
+          <span class="material-symbols-outlined text-white text-2xl">palette</span>
+        </div>
+        <div>
+          <span class="font-black text-lg text-white tracking-wide block leading-tight">Palette Panel</span>
+          <span class="text-xs text-emerald-400 font-semibold">پالت پنل v1.4.7</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
+        <a href="#features" class="hover:text-emerald-400 transition">امکانات و ماژول‌ها</a>
+        <a href="#gallery" class="hover:text-emerald-400 transition">گالری پیش‌نمایش</a>
+        <a href="#install" class="hover:text-emerald-400 transition">راهنمای نصب</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="../" class="text-xs text-slate-400 hover:text-white transition px-3 py-1.5 rounded-lg border border-slate-700 hidden sm:inline-block">← بازگشت به پرتال</a>
+        <a href="https://github.com/ketabchi-ar/palette-panel/releases/download/v1.4.7/palette-panel-v1.4.7.zip" class="flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-bold text-xs sm:text-sm px-4 py-2 rounded-xl shadow-lg shadow-emerald-500/25 transition transform hover:-translate-y-0.5">
+          <span class="material-symbols-outlined text-base">download</span>
+          <span>دانلود نسخه ۱.۴.۷ (ZIP)</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative pt-16 pb-24 overflow-hidden">
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute top-1/3 right-10 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-6xl mx-auto px-4 text-center relative z-10">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass border border-emerald-500/30 text-emerald-400 text-xs font-semibold mb-6">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        نسخه رسمی ۱.۴.۷ منتشر شد • دیزاین سیستم اختصاصی Serene Pro
+      </div>
+
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
+        پنل کاربری و مدیریت هوشمند <br class="hidden sm:inline" />
+        <span class="text-gradient">برای وردپرس و ووکامرس</span>
+      </h1>
+
+      <p class="text-slate-300 text-sm sm:text-base lg:text-lg max-w-3xl mx-auto leading-relaxed mb-10">
+        پلتفرم همه‌کاره و ماژولار که نیاز به نصب ده‌ها افزونه متفرقه را از بین می‌برد؛ مجهز به ورود پیامکی و بیومتریک، کارت‌به‌کارت خودکار با پردازش هوشمند پیامک بانکی، گردونه شانس، کیف‌پول، منوساز زنده و پالت‌ساز ادمین.
+      </p>
+
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a href="https://github.com/ketabchi-ar/palette-panel/releases/download/v1.4.7/palette-panel-v1.4.7.zip" class="flex items-center gap-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-7 py-3.5 rounded-2xl shadow-xl shadow-emerald-500/25 transition transform hover:-translate-y-0.5 text-base">
+          <span class="material-symbols-outlined">download_for_offline</span>
+          <span>دریافت فایل افزونه (نسخه 1.4.7)</span>
+        </a>
+        <a href="#gallery" class="flex items-center gap-2 glass hover:bg-slate-800/80 text-slate-200 font-semibold px-6 py-3.5 rounded-2xl transition border border-slate-700 text-base">
+          <span class="material-symbols-outlined text-slate-400">visibility</span>
+          <span>مشاهده تصاویر محیط پنل</span>
+        </a>
+      </div>
+
+      <div class="mt-12 flex flex-wrap items-center justify-center gap-3 text-xs text-slate-400">
+        <span class="glass-light px-3 py-1.5 rounded-lg">WordPress 5.8+ & 6.x</span>
+        <span class="glass-light px-3 py-1.5 rounded-lg">WooCommerce 5.0+</span>
+        <span class="glass-light px-3 py-1.5 rounded-lg">PHP 7.4 - 8.2 (Recommended 8.1+)</span>
+        <span class="glass-light px-3 py-1.5 rounded-lg">TailwindCSS 3.4</span>
+        <span class="glass-light px-3 py-1.5 rounded-lg">WebAuthn / Passkey Ready</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Showcase Gallery Section -->
+  <section id="gallery" class="py-16 bg-slate-900/60 border-y border-slate-800/60">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white mb-3">گالری تصاویر و پیش‌نمایش محیط برنامه</h2>
+        <p class="text-slate-400 text-sm">طراحی بی‌نظیر، واکنش‌گرا و سازگار با حالت دارک و لایت</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Card 1 -->
+        <div class="glass rounded-2xl overflow-hidden group hover:border-emerald-500/50 transition">
+          <div class="p-4 border-b border-slate-800 flex items-center justify-between">
+            <span class="font-bold text-sm text-slate-200 flex items-center gap-2">
+              <span class="material-symbols-outlined text-emerald-400 text-lg">dashboard</span>
+              پیشخوان کاربری یکپارچه و آمار زنده
+            </span>
+            <span class="text-xs text-slate-400">Serene Slate UI</span>
+          </div>
+          <div class="overflow-hidden bg-slate-950">
+            <img src="docs/screen-dashboard.png" alt="پیشخوان کاربری پالت پنل" class="w-full h-auto object-cover group-hover:scale-105 transition duration-500" />
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="glass rounded-2xl overflow-hidden group hover:border-emerald-500/50 transition">
+          <div class="p-4 border-b border-slate-800 flex items-center justify-between">
+            <span class="font-bold text-sm text-slate-200 flex items-center gap-2">
+              <span class="material-symbols-outlined text-emerald-400 text-lg">lock_open</span>
+              صفحه ورود هوشمند، پیامکی و بیومتریک
+            </span>
+            <span class="text-xs text-slate-400">Multi-Channel Auth</span>
+          </div>
+          <div class="overflow-hidden bg-slate-950">
+            <img src="docs/screen-login.png" alt="صفحه ورود پالت پنل" class="w-full h-auto object-cover group-hover:scale-105 transition duration-500" />
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="glass rounded-2xl overflow-hidden group hover:border-emerald-500/50 transition">
+          <div class="p-4 border-b border-slate-800 flex items-center justify-between">
+            <span class="font-bold text-sm text-slate-200 flex items-center gap-2">
+              <span class="material-symbols-outlined text-emerald-400 text-lg">casino</span>
+              گردونه شانس پویا و افزایش تعامل (Gamification)
+            </span>
+            <span class="text-xs text-slate-400">Lucky Wheel</span>
+          </div>
+          <div class="overflow-hidden bg-slate-950">
+            <img src="docs/screen-engagement.png" alt="گردونه شانس پالت پنل" class="w-full h-auto object-cover group-hover:scale-105 transition duration-500" />
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="glass rounded-2xl overflow-hidden group hover:border-emerald-500/50 transition">
+          <div class="p-4 border-b border-slate-800 flex items-center justify-between">
+            <span class="font-bold text-sm text-slate-200 flex items-center gap-2">
+              <span class="material-symbols-outlined text-emerald-400 text-lg">tune</span>
+              مرکز تنظیمات پیشرفته و پالت‌ساز رنگی
+            </span>
+            <span class="text-xs text-slate-400">Theme Styler</span>
+          </div>
+          <div class="overflow-hidden bg-slate-950">
+            <img src="docs/screen-settings.png" alt="تنظیمات پالت پنل" class="w-full h-auto object-cover group-hover:scale-105 transition duration-500" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Grid -->
+  <section id="features" class="py-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-16">
+        <span class="text-emerald-400 text-xs font-bold uppercase tracking-wider block mb-2">امکانات فوق‌العاده</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">همه ماژول‌های حیاتی در یک پکیج واحد</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Feature 1 -->
+        <div class="glass p-6 rounded-2xl border border-slate-800 hover:border-emerald-500/40 transition">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-4">
+            <span class="material-symbols-outlined text-2xl">sms</span>
+          </div>
+          <h3 class="font-bold text-lg text-white mb-2">احراز هویت پیامکی و بیومتریک</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            ورود با اثر انگشت (Passkey/WebAuthn)، ورود بدون رمز OTP با کاوه نگار، ملی‌پیامک، SMS.ir و ورود با گوگل و ربات بله/تلگرام.
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="glass p-6 rounded-2xl border border-slate-800 hover:border-emerald-500/40 transition">
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center mb-4">
+            <span class="material-symbols-outlined text-2xl">credit_card</span>
+          </div>
+          <h3 class="font-bold text-lg text-white mb-2">کارت‌به‌کارت خودکار هوشمند</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            پردازش خودکار پیامک‌های واریزی بانک‌ها با وب‌هوک اختصاصی، یادگیرنده الگوی پیامک بانکی، تولید مبلغ رندوم و ثبت خودکار فاکتور.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="glass p-6 rounded-2xl border border-slate-800 hover:border-emerald-500/40 transition">
+          <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-4">
+            <span class="material-symbols-outlined text-2xl">account_balance_wallet</span>
+          </div>
+          <h3 class="font-bold text-lg text-white mb-2">کیف پول و کش‌بک خرید</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            شارژ آنلاین موجودی، انتقال به دوستان، پاداش خرید و بازگشت وجه خودکار، تاریخچه تراکنش‌ها و تسویه سریع در ووکامرس.
+          </p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="glass p-6 rounded-2xl border border-slate-800 hover:border-emerald-500/40 transition">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center mb-4">
+            <span class="material-symbols-outlined text-2xl">trophy</span>
+          </div>
+          <h3 class="font-bold text-lg text-white mb-2">گردونه شانس و باشگاه وفاداری</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            ایجاد بی‌نهایت اسلایس جایزه با تعیین دقیق وزن شانس، ساخت خودکار کوپن تخفیف، سطوح کاربری (برنزی، نقره‌ای، طلایی) و پاداش نظرات.
+          </p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="glass p-6 rounded-2xl border border-slate-800 hover:border-emerald-500/40 transition">
+          <div class="w-12 h-12 rounded-xl bg-rose-500/10 text-rose-400 flex items-center justify-center mb-4">
+            <span class="material-symbols-outlined text-2xl">format_paint</span>
+          </div>
+          <h3 class="font-bold text-lg text-white mb-2">منوساز زنده و پالت‌ساز ادمین</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            تعریف تب‌های سفارشی پیشخوان، آیکون‌های Material، فرم‌ساز فیلدهای کد ملی/تاریخ تولد با اعتبارسنجی و تم‌ساز ادمین وردپرس.
+          </p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="glass p-6 rounded-2xl border border-slate-800 hover:border-emerald-500/40 transition">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-4">
+            <span class="material-symbols-outlined text-2xl">security</span>
+          </div>
+          <h3 class="font-bold text-lg text-white mb-2">امنیت و لاگینگ زنده سیستم</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            محدودکننده نرخ پیامک (Rate Limiting)، محافظت در برابر Brute-force، لاگ زنده پیامک‌ها و رویدادهای سیستم، آماده برای استعلام شاهکار.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Installation Section -->
+  <section id="install" class="py-16 bg-slate-900/40 border-t border-slate-800">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="glass p-8 sm:p-10 rounded-3xl border border-slate-700/80">
+        <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+          <span class="material-symbols-outlined text-emerald-400">rocket_launch</span>
+          راهنمای سریع نصب در کمتر از ۱ دقیقه
+        </h2>
+
+        <div class="space-y-4 text-sm text-slate-300 leading-relaxed">
+          <div class="flex items-start gap-3 bg-slate-950/60 p-4 rounded-xl border border-slate-800">
+            <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-xs flex-shrink-0">۱</span>
+            <div>
+              <p class="font-semibold text-white">دریافت فایل فشرده:</p>
+              <p class="text-slate-400 mt-0.5">فایل <a href="https://github.com/ketabchi-ar/palette-panel/releases/download/v1.4.7/palette-panel-v1.4.7.zip" class="text-emerald-400 underline font-semibold">palette-panel-v1.4.7.zip</a> را دانلود کنید.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3 bg-slate-950/60 p-4 rounded-xl border border-slate-800">
+            <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-xs flex-shrink-0">۲</span>
+            <div>
+              <p class="font-semibold text-white">بارگذاری در وردپرس:</p>
+              <p class="text-slate-400 mt-0.5">در پیشخوان وردپرس به بخش <b>افزونه‌ها > افزودن > بارگذاری افزونه</b> بروید و فایل زیپ را انتخاب و نصب کنید.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3 bg-slate-950/60 p-4 rounded-xl border border-slate-800">
+            <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-xs flex-shrink-0">۳</span>
+            <div>
+              <p class="font-semibold text-white">فعال‌سازی و شروع:</p>
+              <p class="text-slate-400 mt-0.5">روی <b>فعال‌سازی افزونه</b> کلیک کنید؛ منوی اختصاصی پالت پنل در پیشخوان ظاهر می‌شود.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="glass border-t border-slate-800/80 py-8 px-4 mt-12 text-center text-xs text-slate-400">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-emerald-400 text-lg">code</span>
+        <span>توسعه‌یافته توسط <b>ketabchi-ar</b> • دیزاین سیستم Serene Pro</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="https://github.com/ketabchi-ar/palette-panel" target="_blank" class="hover:text-white transition flex items-center gap-1">
+          <span>مخزن گیت‌هاب</span>
+        </a>
+        <a href="../" class="hover:text-white transition">پرتال مرکزی</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
