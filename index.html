@@ -45,7 +45,7 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="relative pt-16 pb-20 overflow-hidden">
+  <section class="relative pt-16 pb-16 overflow-hidden">
     <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
     <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
@@ -55,13 +55,22 @@
       </div>
 
       <h1 class="text-3xl sm:text-5xl font-extrabold text-white leading-tight mb-5">
-        خلق ابزارها، پلاگین‌ها و <br class="hidden sm:inline" />
+        خلق ابزارها، سیستم‌ها و <br class="hidden sm:inline" />
         <span class="text-gradient">محصولات نرم‌افزاری مدرن</span>
       </h1>
 
-      <p class="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed mb-10">
-        مجموعه ابزارها و سیستم‌های توسعه‌یافته با تمرکز بر اتوماسیون هوشمند، تجربه کاربری روان (UX) و کدهای بهینه.
+      <p class="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed mb-8">
+        مجموعه نرم‌افزارها، ابزارهای شبکه، سیستم‌های هوش مصنوعی و ماژول‌های توسعه‌یافته با تمرکز بر سرعت بالا، تجربه کاربری روان و کدنویسی بهینه.
       </p>
+
+      <!-- Category Filter Pills -->
+      <div class="flex flex-wrap items-center justify-center gap-2 max-w-3xl mx-auto">
+        <button onclick="filterProjects('all')" class="filter-btn active-filter px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition glass border border-indigo-500/50 bg-indigo-600/30 text-white" data-cat="all">همه پروژه‌ها</button>
+        <button onclick="filterProjects('ai')" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition glass border border-slate-700 hover:border-slate-500 text-slate-300" data-cat="ai">هوش مصنوعی و ایجنت‌ها</button>
+        <button onclick="filterProjects('system')" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition glass border border-slate-700 hover:border-slate-500 text-slate-300" data-cat="system">سیستم و شبکه</button>
+        <button onclick="filterProjects('wp')" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition glass border border-slate-700 hover:border-slate-500 text-slate-300" data-cat="wp">محصولات تجاری و وب</button>
+        <button onclick="filterProjects('tools')" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition glass border border-slate-700 hover:border-slate-500 text-slate-300" data-cat="tools">ابزارها و ابزارهای توسعه</button>
+      </div>
     </div>
   </section>
 
@@ -70,15 +79,177 @@
     <div class="flex items-center justify-between mb-8">
       <h2 class="text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
         <span class="material-symbols-outlined text-indigo-400">deployed_code</span>
-        پروژه‌ها و محصولات
+        <span id="section-title">فهرست پروژه‌ها</span>
       </h2>
-      <span class="text-xs text-slate-400">نمایش موارد برجسته</span>
+      <span id="project-count" class="text-xs text-slate-400">۱۶ پروژه فعال</span>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-      <!-- Project 1: Palette Panel (Featured) -->
-      <div class="glass rounded-3xl p-6 sm:p-8 border border-emerald-500/30 hover:border-emerald-500/60 transition relative overflow-hidden group">
+      <!-- 1: Hermes Cloud Relay -->
+      <div class="project-card glass rounded-3xl p-6 sm:p-8 border border-violet-500/30 hover:border-violet-500/60 transition relative overflow-hidden group" data-category="ai">
+        <div class="absolute -top-12 -right-12 w-32 h-32 bg-violet-500/10 rounded-full blur-2xl group-hover:bg-violet-500/20 transition"></div>
+        <div class="flex items-start justify-between mb-4">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-violet-600 to-fuchsia-400 flex items-center justify-center shadow-lg shadow-violet-500/20">
+            <span class="material-symbols-outlined text-white text-3xl">cloud</span>
+          </div>
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-violet-500/10 text-violet-400 border border-violet-500/20">Cloudflare AI Gateway</span>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2">Hermes Cloud Relay</h3>
+        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+          درگاه سرورلس هوش مصنوعی روی Cloudflare Workers با پنل وب، مدیریت استخر چندحسابی کلیدها، دیپلوی ۱-کلیکی و اتصال خودکار به 9Router جهت دورزدن تحریم‌ها و فیلترینگ.
+        </p>
+        <div class="flex flex-wrap items-center gap-2 text-xs text-slate-400 mb-6">
+          <span class="glass-light px-2.5 py-1 rounded-md">Cloudflare Workers</span>
+          <span class="glass-light px-2.5 py-1 rounded-md">9Router</span>
+          <span class="glass-light px-2.5 py-1 rounded-md">Serverless</span>
+          <span class="glass-light px-2.5 py-1 rounded-md">TypeScript</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="https://github.com/ketabchi-ar/Hermes-Cloud-Relay" target="_blank" class="flex items-center gap-2 bg-violet-500 hover:bg-violet-400 text-slate-950 font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl transition shadow-lg shadow-violet-500/20">
+            <span>مشاهده پروژه</span>
+            <span class="material-symbols-outlined text-sm">arrow_back</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 2: AirBeam -->
+      <div class="project-card glass rounded-3xl p-6 sm:p-8 border border-amber-500/30 hover:border-amber-500/60 transition relative overflow-hidden group" data-category="system">
+        <div class="absolute -top-12 -right-12 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl group-hover:bg-amber-500/20 transition"></div>
+        <div class="flex items-start justify-between mb-4">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-amber-600 to-yellow-400 flex items-center justify-center shadow-lg shadow-amber-500/20">
+            <span class="material-symbols-outlined text-white text-3xl">bolt</span>
+          </div>
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-500/10 text-amber-400 border border-amber-500/20">LAN Transfer</span>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2">AirBeam</h3>
+        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+          انتقال فوق سریع فایل در شبکه محلی بدون هیچ وابستگی با رابط کاربری وب، اسکن و جفت‌سازی از طریق QR Code، قابلیت دانلود/آپلود چندرشته‌ای و امکان Resume خودکار.
+        </p>
+        <div class="flex flex-wrap items-center gap-2 text-xs text-slate-400 mb-6">
+          <span class="glass-light px-2.5 py-1 rounded-md">Python 3</span>
+          <span class="glass-light px-2.5 py-1 rounded-md">Zero-Dependency</span>
+          <span class="glass-light px-2.5 py-1 rounded-md">QR Pairing</span>
+          <span class="glass-light px-2.5 py-1 rounded-md">LAN</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="https://github.com/ketabchi-ar/airbeam" target="_blank" class="flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl transition shadow-lg shadow-amber-500/20">
+            <span>مشاهده پروژه</span>
+            <span class="material-symbols-outlined text-sm">arrow_back</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 3: Mac Cleaner Dashboard -->
+      <div class="project-card glass rounded-3xl p-6 sm:p-8 border border-cyan-500/30 hover:border-cyan-500/60 transition relative overflow-hidden group" data-category="system">
+        <div class="absolute -top-12 -right-12 w-32 h-32 bg-cyan-500/10 rounded-full blur-2xl group-hover:bg-cyan-500/20 transition"></div>
+        <div class="flex items-start justify-between mb-4">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-cyan-600 to-teal-400 flex items-center justify-center shadow-lg shadow-cyan-500/20">
+            <span class="material-symbols-outlined text-white text-3xl">cleaning_services</span>
+          </div>
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">macOS Utility</span>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2">Mac Cleaner Dashboard</h3>
+        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+          تحلیلگر سبک و اختصاصی فضای دیسک و پاکسازی هوشمند فایل‌های زائد و کش در سیستم‌عامل macOS بدون وابستگی جانبی و با تضمین عدم تریگر هشدارهای امنیتی TCC اپل.
+        </p>
+        <div class="flex flex-wrap items-center gap-2 text-xs text-slate-400 mb-6">
+          <span class="glass-light px-2.5 py-1 rounded-md">macOS</span>
+          <span class="glass-light px-2.5 py-1 rounded-md">Zero-TCC</span>
+          <span class="glass-light px-2.5 py-1 rounded-md">Python</span>
+          <span class="glass-light px-2.5 py-1 rounded-md">System Clean</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="https://github.com/ketabchi-ar/mac-cleaner-dashboard" target="_blank" class="flex items-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl transition shadow-lg shadow-cyan-500/20">
+            <span>مشاهده پروژه</span>
+            <span class="material-symbols-outlined text-sm">arrow_back</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 4: Safe-Telegram-MCP -->
+      <div class="project-card glass rounded-3xl p-6 sm:p-8 border border-sky-500/30 hover:border-sky-500/60 transition relative overflow-hidden group" data-category="ai">
+        <div class="absolute -top-12 -right-12 w-32 h-32 bg-sky-500/10 rounded-full blur-2xl group-hover:bg-sky-500/20 transition"></div>
+        <div class="flex items-start justify-between mb-4">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-sky-600 to-blue-500 flex items-center justify-center shadow-lg shadow-sky-500/20">
+            <span class="material-symbols-outlined text-white text-3xl">send</span>
+          </div>
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-sky-500/10 text-sky-400 border border-sky-500/20">MCP Server</span>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2">Safe-Telegram-MCP</h3>
+        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+          سرور استاندارد پروتکل مکاتبه مدلی (MCP) جهت کنترل امن و کامل اکانت تلگرام با تلفیق Telethon و TDLib؛ پوشش چت‌ها، پیام‌های مخفی، رسانه‌ها، مدیریت کانال و مینی‌اپ‌ها.
+        </p>
+        <div class="flex flex-wrap items-center gap-2 text-xs text-slate-400 mb-6">
+          <span class="glass-light px-2.5 py-1 rounded-md">MCP Protocol</span>
+          <span class="glass-light px-2.5 py-1 rounded-md">Telethon</span>
+          <span class="glass-light px-2.5 py-1 rounded-md">TDLib</span>
+          <span class="glass-light px-2.5 py-1 rounded-md">AI Agents</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="https://github.com/ketabchi-ar/Safe-Telegram-MCP" target="_blank" class="flex items-center gap-2 bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl transition shadow-lg shadow-sky-500/20">
+            <span>مشاهده پروژه</span>
+            <span class="material-symbols-outlined text-sm">arrow_back</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 5: Hermes Agent Farsi -->
+      <div class="project-card glass rounded-3xl p-6 sm:p-8 border border-emerald-500/30 hover:border-emerald-500/60 transition relative overflow-hidden group" data-category="ai">
+        <div class="absolute -top-12 -right-12 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl group-hover:bg-emerald-500/20 transition"></div>
+        <div class="flex items-start justify-between mb-4">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-emerald-600 to-green-400 flex items-center justify-center shadow-lg shadow-emerald-500/20">
+            <span class="material-symbols-outlined text-white text-3xl">language</span>
+          </div>
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Hermes Extension</span>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2">Hermes Agent Farsi</h3>
+        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+          بسته نصب ۱-کلیکی بومی‌سازی زبان فارسی برای Hermes Agent؛ شامل ترجمه کامل داشبورد وب، پشتیبانی استاندارد از راست‌به‌چپ (RTL) و ادغام فونت فارسی وزیرمتن.
+        </p>
+        <div class="flex flex-wrap items-center gap-2 text-xs text-slate-400 mb-6">
+          <span class="glass-light px-2.5 py-1 rounded-md">Hermes Agent</span>
+          <span class="glass-light px-2.5 py-1 rounded-md">Persian RTL</span>
+          <span class="glass-light px-2.5 py-1 rounded-md">Vazirmatn</span>
+          <span class="glass-light px-2.5 py-1 rounded-md">Localization</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="https://github.com/ketabchi-ar/hermes-agent-farsi" target="_blank" class="flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl transition shadow-lg shadow-emerald-500/20">
+            <span>مشاهده پروژه</span>
+            <span class="material-symbols-outlined text-sm">arrow_back</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 6: Sub2Proxy -->
+      <div class="project-card glass rounded-3xl p-6 sm:p-8 border border-indigo-500/30 hover:border-indigo-500/60 transition relative overflow-hidden group" data-category="system">
+        <div class="absolute -top-12 -right-12 w-32 h-32 bg-indigo-500/10 rounded-full blur-2xl group-hover:bg-indigo-500/20 transition"></div>
+        <div class="flex items-start justify-between mb-4">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-indigo-600 to-purple-400 flex items-center justify-center shadow-lg shadow-indigo-500/20">
+            <span class="material-symbols-outlined text-white text-3xl">alt_route</span>
+          </div>
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Proxy Routing</span>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2">Sub2Proxy</h3>
+        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+          مبدل و توزیع‌کننده سابسکریپشن و نودهای پروکسی (V2Ray / Mihomo / Clash) با سنجش سلامت اتصال، مرتب‌سازی تاخیر و ساخت کانفیگ‌های بهینه شبکه.
+        </p>
+        <div class="flex flex-wrap items-center gap-2 text-xs text-slate-400 mb-6">
+          <span class="glass-light px-2.5 py-1 rounded-md">Python</span>
+          <span class="glass-light px-2.5 py-1 rounded-md">Mihomo</span>
+          <span class="glass-light px-2.5 py-1 rounded-md">Clash</span>
+          <span class="glass-light px-2.5 py-1 rounded-md">V2Ray</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="https://github.com/ketabchi-ar/sub2proxy" target="_blank" class="flex items-center gap-2 bg-indigo-500 hover:bg-indigo-400 text-slate-950 font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl transition shadow-lg shadow-indigo-500/20">
+            <span>مشاهده پروژه</span>
+            <span class="material-symbols-outlined text-sm">arrow_back</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 7: Palette Panel (Featured) -->
+      <div class="project-card glass rounded-3xl p-6 sm:p-8 border border-emerald-500/30 hover:border-emerald-500/60 transition relative overflow-hidden group" data-category="wp">
         <div class="absolute -top-12 -right-12 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl group-hover:bg-emerald-500/20 transition"></div>
         <div class="flex items-start justify-between mb-4">
           <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-emerald-600 to-teal-400 flex items-center justify-center shadow-lg shadow-emerald-500/20">
@@ -86,33 +257,30 @@
           </div>
           <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">نسخه ۱.۴.۷</span>
         </div>
-
         <h3 class="text-xl font-bold text-white mb-2">Palette Panel (پالت پنل)</h3>
         <p class="text-slate-300 text-sm leading-relaxed mb-6">
           پلتفرم جامع، ماژولار و مدرن پیشخوان کاربری و مدیریت ووکامرس با دیزاین‌سیستم Serene Pro، ورود پیامکی و بیومتریک، کارت‌به‌کارت هوشمند و گردونه شانس.
         </p>
-
         <div class="flex flex-wrap items-center gap-2 text-xs text-slate-400 mb-6">
           <span class="glass-light px-2.5 py-1 rounded-md">WordPress</span>
           <span class="glass-light px-2.5 py-1 rounded-md">WooCommerce</span>
           <span class="glass-light px-2.5 py-1 rounded-md">TailwindCSS</span>
           <span class="glass-light px-2.5 py-1 rounded-md">Passkey</span>
         </div>
-
         <div class="flex items-center gap-3">
           <a href="./palette-panel/" class="flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl shadow-lg shadow-emerald-500/20 transition">
-            <span>مشاهده صفحه دمو و لندینگ</span>
+            <span>مشاهده دمو و لندینگ</span>
             <span class="material-symbols-outlined text-sm">arrow_back</span>
           </a>
-          <a href="https://github.com/ketabchi-ar/palette-panel/releases/download/v1.4.7/palette-panel-v1.4.7.zip" class="flex items-center gap-1 glass hover:bg-slate-800 text-slate-300 text-xs sm:text-sm px-3.5 py-2.5 rounded-xl transition border border-slate-700">
-            <span class="material-symbols-outlined text-base">download</span>
-            <span>دانلود ZIP</span>
+          <a href="https://github.com/ketabchi-ar/palette-panel" target="_blank" class="flex items-center gap-1 glass hover:bg-slate-800 text-slate-300 text-xs sm:text-sm px-3.5 py-2.5 rounded-xl transition border border-slate-700">
+            <span class="material-symbols-outlined text-base">code</span>
+            <span>گیت‌هاب</span>
           </a>
         </div>
       </div>
 
-            <!-- Project 2: Palette Smart Quiz (Featured) -->
-      <div class="glass rounded-3xl p-6 sm:p-8 border border-sky-500/30 hover:border-sky-500/60 transition relative overflow-hidden group">
+      <!-- 8: Palette Smart Quiz (Featured) -->
+      <div class="project-card glass rounded-3xl p-6 sm:p-8 border border-sky-500/30 hover:border-sky-500/60 transition relative overflow-hidden group" data-category="wp">
         <div class="absolute -top-12 -right-12 w-32 h-32 bg-sky-500/10 rounded-full blur-2xl group-hover:bg-sky-500/20 transition"></div>
         <div class="flex items-start justify-between mb-4">
           <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-sky-600 to-cyan-400 flex items-center justify-center shadow-lg shadow-sky-500/20">
@@ -120,51 +288,75 @@
           </div>
           <span class="px-3 py-1 rounded-full text-xs font-bold bg-sky-500/10 text-sky-400 border border-sky-500/20">نسخه ۳.۱۴.۲</span>
         </div>
-
-        <h3 class="text-xl font-bold text-white mb-2">Palette Smart Quiz (پالت اسمارت کوئیز)</h3>
+        <h3 class="text-xl font-bold text-white mb-2">Palette Smart Quiz</h3>
         <p class="text-slate-300 text-sm leading-relaxed mb-6">
-          کوئیزساز هوشمند تعاملی، پیشنهاددهنده محصول ووکامرس، احراز هویت پیامکی بدون کلمه عبور (OTP)، کش‌بک خرید مجدد و تسویه‌حساب برق‌آسای تک‌صفحه‌ای React SPA.
+          کوئیزساز هوشمند تعاملی، پیشنهاددهنده محصول ووکامرس، احراز هویت پیامکی بدون کلمه عبور (OTP)، کش‌بک خرید مجدد و تسویه‌حساب تک‌صفحه‌ای React SPA.
         </p>
-
         <div class="flex flex-wrap items-center gap-2 text-xs text-slate-400 mb-6">
           <span class="glass-light px-2.5 py-1 rounded-md">WordPress</span>
-          <span class="glass-light px-2.5 py-1 rounded-md">WooCommerce</span>
           <span class="glass-light px-2.5 py-1 rounded-md">React SPA</span>
           <span class="glass-light px-2.5 py-1 rounded-md">SMS OTP</span>
+          <span class="glass-light px-2.5 py-1 rounded-md">WooCommerce</span>
         </div>
-
         <div class="flex items-center gap-3">
           <a href="./palette-smart-quiz/" class="flex items-center gap-2 bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl shadow-lg shadow-sky-500/20 transition">
-            <span>مشاهده صفحه دمو و لندینگ</span>
+            <span>مشاهده دمو و لندینگ</span>
             <span class="material-symbols-outlined text-sm">arrow_back</span>
           </a>
-          <a href="https://github.com/ketabchi-ar/palette-smart-quiz/releases/download/v3.14.2/coffee29-smart-quiz-v3.14.2.zip" class="flex items-center gap-1 glass hover:bg-slate-800 text-slate-300 text-xs sm:text-sm px-3.5 py-2.5 rounded-xl transition border border-slate-700">
-            <span class="material-symbols-outlined text-base">download</span>
-            <span>دانلود ZIP</span>
+          <a href="https://github.com/ketabchi-ar/palette-smart-quiz" target="_blank" class="flex items-center gap-1 glass hover:bg-slate-800 text-slate-300 text-xs sm:text-sm px-3.5 py-2.5 rounded-xl transition border border-slate-700">
+            <span class="material-symbols-outlined text-base">code</span>
+            <span>گیت‌هاب</span>
           </a>
         </div>
       </div>
 
-      <!-- Project 3: Palette Personal Wallet -->
-      <div class="glass rounded-3xl p-6 sm:p-8 border border-slate-800 hover:border-slate-700 transition relative overflow-hidden">
+      <!-- 9: Domain Price Checker -->
+      <div class="project-card glass rounded-3xl p-6 sm:p-8 border border-slate-800 hover:border-slate-700 transition relative overflow-hidden" data-category="tools">
+        <div class="flex items-start justify-between mb-4">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-blue-600 to-cyan-400 flex items-center justify-center shadow-lg shadow-blue-500/20">
+            <span class="material-symbols-outlined text-white text-3xl">search_check</span>
+          </div>
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-blue-500/10 text-blue-400 border border-blue-500/20">Web Tool</span>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2">Domain Price Checker</h3>
+        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+          ابزار آنلاین استعلام آزاد بودن دامنه، مقایسه قیمت پسوندهای ملی و بین‌المللی و ادغام مستقیم با APIهای ثبت دامنه و ایران‌سرور.
+        </p>
+        <div class="flex flex-wrap items-center gap-2 text-xs text-slate-400 mb-6">
+          <span class="glass-light px-2.5 py-1 rounded-md">JavaScript</span>
+          <span class="glass-light px-2.5 py-1 rounded-md">Domain API</span>
+          <span class="glass-light px-2.5 py-1 rounded-md">Pricing Table</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="https://ketabchi-ar.github.io/domain-price-checker/" target="_blank" class="flex items-center gap-2 bg-blue-500 hover:bg-blue-400 text-slate-950 font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl transition">
+            <span>اجرای زنده</span>
+            <span class="material-symbols-outlined text-sm">arrow_back</span>
+          </a>
+          <a href="https://github.com/ketabchi-ar/domain-price-checker" target="_blank" class="flex items-center gap-1 glass hover:bg-slate-800 text-slate-300 text-xs sm:text-sm px-3.5 py-2.5 rounded-xl transition border border-slate-700">
+            <span class="material-symbols-outlined text-base">code</span>
+            <span>گیت‌هاب</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 10: Palette Personal Wallet -->
+      <div class="project-card glass rounded-3xl p-6 sm:p-8 border border-slate-800 hover:border-slate-700 transition relative overflow-hidden" data-category="wp">
         <div class="flex items-start justify-between mb-4">
           <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-cyan-600 to-blue-400 flex items-center justify-center shadow-lg shadow-cyan-500/20">
             <span class="material-symbols-outlined text-white text-3xl">account_balance_wallet</span>
           </div>
           <span class="px-3 py-1 rounded-full text-xs font-bold bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">PWA & AI</span>
         </div>
-
         <h3 class="text-xl font-bold text-white mb-2">Palette Personal Wallet</h3>
         <p class="text-slate-300 text-sm leading-relaxed mb-6">
-          کیف‌پول و سیستم مدیریت مالی شخصی به زبان PHP و دیتابیس سبک SQLite همراه با قابلیت‌های PWA و تحلیل‌های هوش مصنوعی.
+          کیف‌پول و سیستم مدیریت مالی شخصی به زبان PHP و دیتابیس سبک SQLite همراه با قابلیت‌های PWA و تحلیل‌های هوش مصنوعی هزینه‌ها.
         </p>
-
         <div class="flex flex-wrap items-center gap-2 text-xs text-slate-400 mb-6">
           <span class="glass-light px-2.5 py-1 rounded-md">PHP</span>
           <span class="glass-light px-2.5 py-1 rounded-md">SQLite</span>
           <span class="glass-light px-2.5 py-1 rounded-md">PWA</span>
+          <span class="glass-light px-2.5 py-1 rounded-md">AI Analytics</span>
         </div>
-
         <div class="flex items-center gap-3">
           <a href="https://github.com/ketabchi-ar/palette-personal-wallet" target="_blank" class="flex items-center gap-2 glass hover:bg-slate-800 text-slate-200 font-semibold text-xs sm:text-sm px-4 py-2.5 rounded-xl transition border border-slate-700">
             <span class="material-symbols-outlined text-sm">code</span>
@@ -173,26 +365,98 @@
         </div>
       </div>
 
-      <!-- Project 4: FontWoW -->
-      <div class="glass rounded-3xl p-6 sm:p-8 border border-slate-800 hover:border-slate-700 transition relative overflow-hidden">
+      <!-- 11: Body Recomposition Tracker -->
+      <div class="project-card glass rounded-3xl p-6 sm:p-8 border border-slate-800 hover:border-slate-700 transition relative overflow-hidden" data-category="tools">
+        <div class="flex items-start justify-between mb-4">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-teal-600 to-emerald-400 flex items-center justify-center shadow-lg shadow-teal-500/20">
+            <span class="material-symbols-outlined text-white text-3xl">fitness_center</span>
+          </div>
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-teal-500/10 text-teal-400 border border-teal-500/20">Health Tracker</span>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2">Body Recomposition Tracker</h3>
+        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+          وب‌اپلیکیشن ترکر هوشمند رژیم غذایی، مکمل‌ها و تمرینات ورزشی (Body Recomposition) با تحلیل نموداری روند چربی‌سوزی و عضله‌سازی.
+        </p>
+        <div class="flex flex-wrap items-center gap-2 text-xs text-slate-400 mb-6">
+          <span class="glass-light px-2.5 py-1 rounded-md">Web App</span>
+          <span class="glass-light px-2.5 py-1 rounded-md">Chart.js</span>
+          <span class="glass-light px-2.5 py-1 rounded-md">Fitness</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="https://github.com/ketabchi-ar/body-recomposition-tracker" target="_blank" class="flex items-center gap-2 glass hover:bg-slate-800 text-slate-200 font-semibold text-xs sm:text-sm px-4 py-2.5 rounded-xl transition border border-slate-700">
+            <span class="material-symbols-outlined text-sm">code</span>
+            <span>مخزن گیت‌هاب</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 12: Cando Contract Proposal -->
+      <div class="project-card glass rounded-3xl p-6 sm:p-8 border border-slate-800 hover:border-slate-700 transition relative overflow-hidden" data-category="wp">
+        <div class="flex items-start justify-between mb-4">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-amber-600 to-orange-400 flex items-center justify-center shadow-lg shadow-amber-500/20">
+            <span class="material-symbols-outlined text-white text-3xl">description</span>
+          </div>
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-500/10 text-amber-400 border border-amber-500/20">Contract SPA</span>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2">Cando & Bartan Proposals</h3>
+        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+          سامانه تعاملی پروپوزال و قراردادهای رسمی طراحی و توسعه وب با جدول هزینه پویا، زمان‌بندی فازها، شرایط حقوقی و امکان امضای دیجیتال آنلاین.
+        </p>
+        <div class="flex flex-wrap items-center gap-2 text-xs text-slate-400 mb-6">
+          <span class="glass-light px-2.5 py-1 rounded-md">HTML5 / Tailwind</span>
+          <span class="glass-light px-2.5 py-1 rounded-md">Digital Sign</span>
+          <span class="glass-light px-2.5 py-1 rounded-md">Proposal</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="https://github.com/ketabchi-ar/cando-contract-proposal" target="_blank" class="flex items-center gap-2 glass hover:bg-slate-800 text-slate-200 font-semibold text-xs sm:text-sm px-4 py-2.5 rounded-xl transition border border-slate-700">
+            <span class="material-symbols-outlined text-sm">code</span>
+            <span>مخزن گیت‌هاب</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 13: Persian Font Plus -->
+      <div class="project-card glass rounded-3xl p-6 sm:p-8 border border-slate-800 hover:border-slate-700 transition relative overflow-hidden" data-category="tools">
+        <div class="flex items-start justify-between mb-4">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-rose-600 to-orange-400 flex items-center justify-center shadow-lg shadow-rose-500/20">
+            <span class="material-symbols-outlined text-white text-3xl">format_size</span>
+          </div>
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-rose-500/10 text-rose-400 border border-rose-500/20">Hermes Plugin</span>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2">Persian Font Plus</h3>
+        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+          پلاگین بهبود تایپوگرافی فارسی و عربی برای Hermes Desktop با فونت‌های سازگار RTL و تنظیم استایل‌های استاندارد بصری.
+        </p>
+        <div class="flex flex-wrap items-center gap-2 text-xs text-slate-400 mb-6">
+          <span class="glass-light px-2.5 py-1 rounded-md">CSS / Typography</span>
+          <span class="glass-light px-2.5 py-1 rounded-md">Hermes Plugin</span>
+          <span class="glass-light px-2.5 py-1 rounded-md">RTL</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="https://github.com/ketabchi-ar/persian-font-plus" target="_blank" class="flex items-center gap-2 glass hover:bg-slate-800 text-slate-200 font-semibold text-xs sm:text-sm px-4 py-2.5 rounded-xl transition border border-slate-700">
+            <span class="material-symbols-outlined text-sm">code</span>
+            <span>مخزن گیت‌هاب</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 14: FontWoW -->
+      <div class="project-card glass rounded-3xl p-6 sm:p-8 border border-slate-800 hover:border-slate-700 transition relative overflow-hidden" data-category="tools">
         <div class="flex items-start justify-between mb-4">
           <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-purple-600 to-pink-400 flex items-center justify-center shadow-lg shadow-purple-500/20">
             <span class="material-symbols-outlined text-white text-3xl">font_download</span>
           </div>
-          <span class="px-3 py-1 rounded-full text-xs font-bold bg-purple-500/10 text-purple-400 border border-purple-500/20">Web Tool</span>
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-purple-500/10 text-purple-400 border border-purple-500/20">Typography Tool</span>
         </div>
-
         <h3 class="text-xl font-bold text-white mb-2">FontWoW</h3>
         <p class="text-slate-300 text-sm leading-relaxed mb-6">
           ابزار آنلاین پیش‌نمایش، تست و مقایسه وب‌فونت‌های فارسی و لاتین به صورت زنده با قابلیت شخصی‌سازی اندازه، وزن و متن تستی.
         </p>
-
         <div class="flex flex-wrap items-center gap-2 text-xs text-slate-400 mb-6">
           <span class="glass-light px-2.5 py-1 rounded-md">JavaScript</span>
           <span class="glass-light px-2.5 py-1 rounded-md">Typography</span>
-          <span class="glass-light px-2.5 py-1 rounded-md">GitHub Pages</span>
+          <span class="glass-light px-2.5 py-1 rounded-md">Web App</span>
         </div>
-
         <div class="flex items-center gap-3">
           <a href="https://github.com/ketabchi-ar/FontWoW.github.io" target="_blank" class="flex items-center gap-2 glass hover:bg-slate-800 text-slate-200 font-semibold text-xs sm:text-sm px-4 py-2.5 rounded-xl transition border border-slate-700">
             <span class="material-symbols-outlined text-sm">code</span>
@@ -201,25 +465,23 @@
         </div>
       </div>
 
-      <!-- Project 5: Factor -->
-      <div class="glass rounded-3xl p-6 sm:p-8 border border-slate-800 hover:border-slate-700 transition relative overflow-hidden">
+      <!-- 15: Factor -->
+      <div class="project-card glass rounded-3xl p-6 sm:p-8 border border-slate-800 hover:border-slate-700 transition relative overflow-hidden" data-category="tools">
         <div class="flex items-start justify-between mb-4">
           <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-amber-600 to-orange-400 flex items-center justify-center shadow-lg shadow-amber-500/20">
             <span class="material-symbols-outlined text-white text-3xl">receipt_long</span>
           </div>
           <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-500/10 text-amber-400 border border-amber-500/20">Billing</span>
         </div>
-
-        <h3 class="text-xl font-bold text-white mb-2">Factor (سیستم فاکتور هوشمند)</h3>
+        <h3 class="text-xl font-bold text-white mb-2">Factor (موتور صدور فاکتور)</h3>
         <p class="text-slate-300 text-sm leading-relaxed mb-6">
-          موتور صدور فاکتور رسمی و استاندارد، محاسبه خودکار مالیات و تخفیف، خروجی چاپی زیبا و PDF استاندارد.
+          موتور صدور فاکتور رسمی و استاندارد، محاسبه خودکار مالیات و تخفیف، با خروجی چاپی سازگار با پرینت و نسخه PDF استاندارد.
         </p>
-
         <div class="flex flex-wrap items-center gap-2 text-xs text-slate-400 mb-6">
           <span class="glass-light px-2.5 py-1 rounded-md">Accounting</span>
           <span class="glass-light px-2.5 py-1 rounded-md">Invoice Engine</span>
+          <span class="glass-light px-2.5 py-1 rounded-md">Print Friendly</span>
         </div>
-
         <div class="flex items-center gap-3">
           <a href="https://github.com/ketabchi-ar/factor" target="_blank" class="flex items-center gap-2 glass hover:bg-slate-800 text-slate-200 font-semibold text-xs sm:text-sm px-4 py-2.5 rounded-xl transition border border-slate-700">
             <span class="material-symbols-outlined text-sm">code</span>
@@ -228,32 +490,29 @@
         </div>
       </div>
 
-      <!-- Project 6: Hermes Cloud Relay -->
-      <div class="glass rounded-3xl p-6 sm:p-8 border border-violet-500/30 hover:border-violet-500/60 transition relative overflow-hidden">
+      <!-- 16: Yektanet CTF Writeup -->
+      <div class="project-card glass rounded-3xl p-6 sm:p-8 border border-slate-800 hover:border-slate-700 transition relative overflow-hidden" data-category="tools">
         <div class="flex items-start justify-between mb-4">
-          <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-violet-600 to-fuchsia-400 flex items-center justify-center shadow-lg shadow-violet-500/20"><span class="material-symbols-outlined text-white text-3xl">cloud</span></div>
-          <span class="px-3 py-1 rounded-full text-xs font-bold bg-violet-500/10 text-violet-400 border border-violet-500/20">Cloudflare AI</span>
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-indigo-600 to-cyan-400 flex items-center justify-center shadow-lg shadow-indigo-500/20">
+            <span class="material-symbols-outlined text-white text-3xl">security</span>
+          </div>
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Security & CTF</span>
         </div>
-        <h3 class="text-xl font-bold text-white mb-2">Hermes Cloud Relay</h3>
-        <p class="text-slate-300 text-sm leading-relaxed mb-6">درگاه سرورلس هوش مصنوعی روی Cloudflare با پنل وب، استخر چندحسابی و اتصال خودکار 9Router.</p>
-        <div class="flex flex-wrap items-center gap-2 text-xs text-slate-400 mb-6"><span class="glass-light px-2.5 py-1 rounded-md">Cloudflare Workers</span><span class="glass-light px-2.5 py-1 rounded-md">AI Gateway</span></div>
-        <div class="flex items-center gap-3"><a href="https://b2n.ir/ketabchi-ar-hermes-cloud" target="_blank" class="flex items-center gap-2 bg-violet-500 hover:bg-violet-400 text-slate-950 font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl transition"><span>مشاهده پروژه</span><span class="material-symbols-outlined text-sm">arrow_back</span></a></div>
-      </div>
-
-      <!-- Project 7: Domain Price Checker -->
-      <div class="glass rounded-3xl p-6 sm:p-8 border border-slate-800 hover:border-slate-700 transition relative overflow-hidden">
-        <div class="flex items-start justify-between mb-4"><div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-blue-600 to-cyan-400 flex items-center justify-center"><span class="material-symbols-outlined text-white text-3xl">language</span></div><span class="px-3 py-1 rounded-full text-xs font-bold bg-blue-500/10 text-blue-400 border border-blue-500/20">Web Tool</span></div>
-        <h3 class="text-xl font-bold text-white mb-2">Domain Price Checker</h3>
-        <p class="text-slate-300 text-sm leading-relaxed mb-6">استعلام وضعیت دامنه و قیمت پسوندها با داده‌های ایران‌سرور و موتورهای متعدد.</p>
-        <div class="flex items-center gap-3"><a href="https://b2n.ir/domaincheck-2" target="_blank" class="flex items-center gap-2 glass hover:bg-slate-800 text-slate-200 font-semibold text-xs sm:text-sm px-4 py-2.5 rounded-xl transition border border-slate-700"><span class="material-symbols-outlined text-sm">code</span><span>مخزن گیت‌هاب</span></a></div>
-      </div>
-
-      <!-- Project 8: Persian Font Plus -->
-      <div class="glass rounded-3xl p-6 sm:p-8 border border-slate-800 hover:border-slate-700 transition relative overflow-hidden">
-        <div class="flex items-start justify-between mb-4"><div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-rose-600 to-orange-400 flex items-center justify-center"><span class="material-symbols-outlined text-white text-3xl">format_size</span></div><span class="px-3 py-1 rounded-full text-xs font-bold bg-rose-500/10 text-rose-400 border border-rose-500/20">Hermes Plugin</span></div>
-        <h3 class="text-xl font-bold text-white mb-2">Persian Font Plus</h3>
-        <p class="text-slate-300 text-sm leading-relaxed mb-6">پلاگین بهبود تایپوگرافی فارسی و عربی برای Hermes Desktop با فونت‌های سازگار RTL.</p>
-        <div class="flex items-center gap-3"><a href="https://b2n.ir/k-font" target="_blank" class="flex items-center gap-2 glass hover:bg-slate-800 text-slate-200 font-semibold text-xs sm:text-sm px-4 py-2.5 rounded-xl transition border border-slate-700"><span class="material-symbols-outlined text-sm">code</span><span>مخزن گیت‌هاب</span></a></div>
+        <h3 class="text-xl font-bold text-white mb-2">Yektanet CTF Writeup</h3>
+        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+          مستندات و تحلیل حل چالش‌های امنیتی و رمزنگاری CTF مسابقه رمزالمثل یکتانت شامل تحلیل کد، اسکریپت‌های اکسپلویت و حل مسائل RSA و وب.
+        </p>
+        <div class="flex flex-wrap items-center gap-2 text-xs text-slate-400 mb-6">
+          <span class="glass-light px-2.5 py-1 rounded-md">Cryptography</span>
+          <span class="glass-light px-2.5 py-1 rounded-md">CTF Writeup</span>
+          <span class="glass-light px-2.5 py-1 rounded-md">Python Solvers</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="https://github.com/ketabchi-ar/yektanet-ramzolmasal-ctf-writeup" target="_blank" class="flex items-center gap-2 glass hover:bg-slate-800 text-slate-200 font-semibold text-xs sm:text-sm px-4 py-2.5 rounded-xl transition border border-slate-700">
+            <span class="material-symbols-outlined text-sm">code</span>
+            <span>مخزن گیت‌هاب</span>
+          </a>
+        </div>
       </div>
 
     </div>
@@ -264,10 +523,37 @@
     <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
       <span>© 2026 <b>ketabchi-ar</b> • میزبانی شده روی GitHub Pages</span>
       <div class="flex items-center gap-4">
-        <a href="https://github.com/ketabchi-ar" target="_blank" class="hover:text-white transition">GitHub</a>
+        <a href="https://github.com/ketabchi-ar" target="_blank" class="hover:text-white transition">GitHub Profile</a>
       </div>
     </div>
   </footer>
 
+  <script>
+    // ponytail: client-side filter under 20 lines. Minimal vanilla JS.
+    function filterProjects(category) {
+      const cards = document.querySelectorAll('.project-card');
+      const buttons = document.querySelectorAll('.filter-btn');
+      let visibleCount = 0;
+
+      buttons.forEach(btn => {
+        if (btn.dataset.cat === category) {
+          btn.className = 'filter-btn active-filter px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition glass border border-indigo-500/50 bg-indigo-600/30 text-white';
+        } else {
+          btn.className = 'filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition glass border border-slate-700 hover:border-slate-500 text-slate-300';
+        }
+      });
+
+      cards.forEach(card => {
+        if (category === 'all' || card.dataset.category === category) {
+          card.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      document.getElementById('project-count').textContent = visibleCount + ' پروژه';
+    }
+  </script>
 </body>
 </html>
