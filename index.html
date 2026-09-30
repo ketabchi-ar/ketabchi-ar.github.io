@@ -36,6 +36,10 @@
       </div>
 
       <div class="flex items-center gap-3">
+        <a href="https://devsponsors.github.io" target="_blank" class="flex items-center gap-2 glass hover:bg-slate-800 text-indigo-400 hover:text-indigo-300 text-xs sm:text-sm px-3.5 py-2 rounded-xl transition border border-indigo-500/40 shadow-sm shadow-indigo-500/10">
+          <span class="material-symbols-outlined text-base">verified</span>
+          <span>عضو DevSponsors</span>
+        </a>
         <a href="https://github.com/ketabchi-ar" target="_blank" class="flex items-center gap-2 glass hover:bg-slate-800 text-slate-300 hover:text-white text-xs sm:text-sm px-4 py-2 rounded-xl transition border border-slate-700">
           <span class="material-symbols-outlined text-base">code</span>
           <span>پروفایل گیت‌هاب</span>
@@ -63,6 +67,16 @@
         مجموعه نرم‌افزارها، ابزارهای شبکه، سیستم‌های هوش مصنوعی و ماژول‌های توسعه‌یافته با تمرکز بر سرعت بالا، تجربه کاربری روان و کدنویسی بهینه.
       </p>
 
+      <!-- DevSponsors Official Badges Banner -->
+      <div class="flex flex-wrap items-center justify-center gap-3 mb-8">
+        <a href="https://devsponsors.github.io" target="_blank" class="transition hover:scale-105">
+          <img src="https://img.shields.io/badge/DevSponsors-Verified_OSS-6366f1?style=for-the-badge&logo=github" alt="DevSponsors Verified OSS" class="rounded-lg shadow-md shadow-indigo-500/20" />
+        </a>
+        <a href="https://devsponsors.github.io" target="_blank" class="transition hover:scale-105">
+          <img src="https://img.shields.io/badge/Sponsor-DevSponsors_Hub-emerald?style=for-the-badge&logo=github-sponsors" alt="Sponsor on DevSponsors" class="rounded-lg shadow-md shadow-emerald-500/20" />
+        </a>
+      </div>
+
       <!-- Category Filter Pills -->
       <div class="flex flex-wrap items-center justify-center gap-2 max-w-3xl mx-auto">
         <button onclick="filterProjects('all')" class="filter-btn active-filter px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition glass border border-indigo-500/50 bg-indigo-600/30 text-white" data-cat="all">همه پروژه‌ها</button>
@@ -81,7 +95,7 @@
         <span class="material-symbols-outlined text-indigo-400">deployed_code</span>
         <span id="section-title">فهرست پروژه‌ها</span>
       </h2>
-      <span id="project-count" class="text-xs text-slate-400">۱۶ پروژه فعال</span>
+      <span id="project-count" class="text-xs text-slate-400">۱۷ پروژه فعال</span>
     </div>
 
     <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -134,6 +148,33 @@
         </div>
         <div class="flex items-center gap-3">
           <a href="https://github.com/ketabchi-ar/airbeam" target="_blank" class="flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl transition shadow-lg shadow-amber-500/20">
+            <span>مشاهده پروژه</span>
+            <span class="material-symbols-outlined text-sm">arrow_back</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 3: SIM Bridge -->
+      <div class="project-card glass rounded-3xl p-6 sm:p-8 border border-sky-500/30 hover:border-sky-500/60 transition relative overflow-hidden group" data-category="system">
+        <div class="absolute -top-12 -right-12 w-32 h-32 bg-sky-500/10 rounded-full blur-2xl group-hover:bg-sky-500/20 transition"></div>
+        <div class="flex items-start justify-between mb-4">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-sky-600 to-cyan-400 flex items-center justify-center shadow-lg shadow-sky-500/20">
+            <span class="material-symbols-outlined text-white text-3xl">phonelink_ring</span>
+          </div>
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-sky-500/10 text-sky-400 border border-sky-500/20">Android & Bluetooth</span>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-2">SIM Bridge</h3>
+        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+          پل ارتباطی هوشمند بین دو گوشی اندرویدی از طریق بلوتوث: انتقال زنده و دوطرفه تماس صوتی، فوروارد و ارسال نوتیفیکیشن/پیامک، و تترینگ اینترنت کم‌مصرف Bluetooth PAN.
+        </p>
+        <div class="flex flex-wrap items-center gap-2 text-xs text-slate-400 mb-6">
+          <span class="glass-light px-2.5 py-1 rounded-md">Android (Kotlin)</span>
+          <span class="glass-light px-2.5 py-1 rounded-md">Bluetooth RFCOMM</span>
+          <span class="glass-light px-2.5 py-1 rounded-md">Call & SMS Relay</span>
+          <span class="glass-light px-2.5 py-1 rounded-md">Open Source</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="https://github.com/ketabchi-ar/sim-bridge" target="_blank" class="flex items-center gap-2 bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl transition shadow-lg shadow-sky-500/20">
             <span>مشاهده پروژه</span>
             <span class="material-symbols-outlined text-sm">arrow_back</span>
           </a>
@@ -523,6 +564,10 @@
     <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
       <span>© 2026 <b>ketabchi-ar</b> • میزبانی شده روی GitHub Pages</span>
       <div class="flex items-center gap-4">
+        <a href="https://devsponsors.github.io" target="_blank" class="hover:text-indigo-400 text-indigo-400/90 transition flex items-center gap-1">
+          <span>DevSponsors Hub</span>
+        </a>
+        <span>•</span>
         <a href="https://github.com/ketabchi-ar" target="_blank" class="hover:text-white transition">GitHub Profile</a>
       </div>
     </div>
